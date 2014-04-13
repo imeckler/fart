@@ -1,0 +1,19 @@
+OASISFormat: 0.4
+Name:        Math_blog
+Version:     0.1
+Synopsis:    The code for my math blog
+Authors:     Izaak Meckler
+License:     WTFPL
+Plugins:     META (0.4)
+BuildTools:  ocamlbuild
+
+Executable art
+  Path: art
+  MainIs: art.ml
+  Install: false
+  CompiledObject: byte
+  BuildDepends: compelling_proof, corejs, frp, js_of_ocaml, js_of_ocaml.syntax
+
+PostBuildCommand:
+  js_of_ocaml -debuginfo -pretty art.byte
+  mv art.js ../www/js
