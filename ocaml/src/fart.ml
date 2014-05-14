@@ -1,1 +1,1 @@
-let () = Arrows.main ()
+let () = Scrub.main ()
